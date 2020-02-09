@@ -1,0 +1,37 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1251" />
+<title>Документ без названия</title>
+<script type="text/javascript">
+
+function imouse(){
+var xpos;
+var ypos;
+  ypos=event.y;//+document.body.scrollTop;
+  xpos=event.x;//+document.body.scrollLeft;
+  if (ypos<11) 
+  {
+  document.write('x='+xpos+'  y='+ypos);
+  }
+  }
+//document.write('x='+xpos+'  y='+ypos);
+
+function mouse_out()
+{
+  document.write('mouse - out');
+}
+</script>
+</head>
+
+<body>
+<table border="1" width="200" height="200" id="myElement" onmouseout= "javascript: alert('Спасибо');">
+<tr><td>
+Проверка координаты мыши 
+
+</td></tr></table>
+<script>
+//document.getElementById('myElement').onmouseout= function() {alert('Спасибо');}
+</script>
+</body>
+</html>

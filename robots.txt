@@ -1,0 +1,9 @@
+User-agent: *
+Disallow: /images/
+Disallow: /pictures/
+Disallow: /2c24f9969d3c3948cafd13b00adf5068/
+Disallow: /comments/
+Disallow: /*.php
+Disallow: /style.css
+Host: 4mushes.ru
+Sitemap: http://4mushes.ru/sitemap.xml

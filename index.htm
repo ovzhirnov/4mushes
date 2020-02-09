@@ -1,0 +1,145 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html> 
+<head>
+<?php
+
+$conn = Mysql_connect("localhost", "mushes_oleg", "J1Obza28qs")
+or die("РќРµРІРѕР·РјРѕР¶РЅРѕ СѓСЃС‚Р°РЅРѕРІРёС‚СЊ СЃРѕРµРґРёРЅРµРЅРёРµ: ". Mysql_error());
+$database="mushes_rooms";
+Mysql_select_db($database); //РІС‹Р±РѕСЂ Р±Р°Р·С‹
+
+mysql_query("SET NAMES 'cp1251'");
+mysql_query ("set collation_connection='cp1251'");
+mysql_query ("set collation_server='cp1251'");
+mysql_query ("set character_set_client='cp1251'");
+mysql_query ("set character_set_results='cp1251'");
+mysql_query ("set character_set_connection='cp1251'");
+mysql_query ("set character_set_server='cp1251'");
+
+$table_name="wp_options";
+$sql = "SELECT * FROM ".$table_name." WHERE option_name='blogname'"; //СЃРѕР·РґР°РµРј SQL Р·Р°РїСЂРѕСЃ
+$q=Mysql_query($sql, $conn) or die("Р—Р°РїСЂРѕСЃ РЅРµ РІС‹РїРѕР»РЅРµРЅ!"); //РѕС‚РїСЂР°РІР»СЏРµРј Р·Р°РїСЂРѕСЃ РЅР° СЃРµСЂРІРµСЂ
+$row=Mysql_fetch_array($q);
+$blogname=mb_strtoupper($row['option_value'],'cp1251');
+
+$table_name="wp_posts";
+$sql = "SELECT * FROM ".$table_name." WHERE post_type='post' and post_status='publish'"; //СЃРѕР·РґР°РµРј SQL Р·Р°РїСЂРѕСЃ
+$q=Mysql_query($sql, $conn) or die("Р—Р°РїСЂРѕСЃ РЅРµ РІС‹РїРѕР»РЅРµРЅ!"); //РѕС‚РїСЂР°РІР»СЏРµРј Р·Р°РїСЂРѕСЃ РЅР° СЃРµСЂРІРµСЂ
+$row=Mysql_fetch_array($q);
+$blogtitle=mb_strtoupper($row['post_title'],'cp1251');
+?>
+	<META http-equiv=Content-Type content="text/html; charset=windows-1251">
+	<title><?php echo $blogname; ?></title>
+	<meta name="keywords" content="<?php echo $blogname; ?>, грибникам">
+	<meta name="description" content="<?php echo $blogname; ?>, Этот сайт адресован в первую очередь начинающим грибникам, которые уже почувствовали в себе азарт охотника, но еще не вооружились необходимыми знаниями для его удовлетворения. Ведь, даже будучи тихой, она обладает всеми признаками, присущими остальным разновидностям охоты, где одним из главных элементов является риск">
+	<meta name="revisit-after" content="7 day">
+	<link rel="stylesheet" href="style.css" type="text/css">
+	<META content="index, follow" name="Robots">
+<link rel="icon" href="favicon.png" type="image/x-icon">
+	
+<meta name='yandex-verification' content='773473b61b69899f' />
+<meta name="google-site-verification" content="f42PJd1iEGye1nYbVvd9NfZCnLwDbdJMwcaZbwKOpkk" />
+<script language="javascript">
+function openMenu(id)
+{
+if (document.getElementById(id).style.display=="none")
+{document.getElementById(id).style.display="block";}
+else {document.getElementById(id).style.display="none";}
+}
+document.write('<scr'+'ipt type="text/javascript" src="show.js"></scr'+'ipt>');
+</script>
+</head>
+
+
+<body>
+<?php 
+    global $sape;
+    if (!defined('_SAPE_USER')){
+        define('_SAPE_USER', '2c24f9969d3c3948cafd13b00adf5068'); 
+    }
+    require_once($_SERVER['DOCUMENT_ROOT'].'/'._SAPE_USER.'/sape.php'); 
+	$sape = new SAPE_client();
+?>
+<table width="1200" border="0" onClick="showr();">
+<tr><td width="200" valign="top"><?php require "left_col.php"; ?></td>
+<td valign="top">
+<div id="rap">
+<div id="header">
+
+<div id="headerleft">
+<h1><a href="http://4mushes.ru"><?php echo $blogname; ?></a></h1>
+</div><!-- end headerleft -->
+<p><font color="#CCCCCC"  size="2">СЕГОДНЯ: <?php require 'data.php' ?></font></p>				
+
+
+</div><!-- end header -->
+
+
+<div id="content">
+
+     <div class="storywrap">
+
+<div class="post">
+         <h3 class="storytitle">ГРИБНИКАМ ПОСВЯЩАЕТСЯ</h3>
+<script type="text/javascript"><!--
+google_ad_client = "ca-pub-9689762761920713";
+/* 4mushes468x15#fff */
+google_ad_slot = "9753859657";
+google_ad_width = 468;
+google_ad_height = 15;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+<br /><br />
+        <div class="storycontent">
+<?php
+
+mysql_query("SET NAMES 'cp1251'");
+mysql_query ("set collation_connection='cp1251'");
+mysql_query ("set collation_server='cp1251'");
+mysql_query ("set character_set_client='cp1251'");
+mysql_query ("set character_set_results='cp1251'");
+mysql_query ("set character_set_connection='cp1251'");
+mysql_query ("set character_set_server='cp1251'");
+
+
+$table_name="wp_posts";
+
+
+$sql = "SELECT * FROM ".$table_name." WHERE post_type='post' and post_status='publish'"; //СЃРѕР·РґР°РµРј SQL Р·Р°РїСЂРѕСЃ
+$q=Mysql_query($sql, $conn) or die("Р—Р°РїСЂРѕСЃ РЅРµ РІС‹РїРѕР»РЅРµРЅ!"); //РѕС‚РїСЂР°РІР»СЏРµРј Р·Р°РїСЂРѕСЃ РЅР° СЃРµСЂРІРµСЂ
+$row=Mysql_fetch_array($q);
+$content=$row['post_content'];
+
+echo nl2br($content);
+?>
+        </div><!-- end storycontent -->
+<div style="display:none"><a href="http://zovkino.ru">Скачать новинки кино бесплатно без СМС без регистрации</a></div>
+
+<div align="center">
+<noindex>
+<script type="text/javascript"><!--
+google_ad_client = "pub-9689762761920713";
+/* 468x60, создано 12.04.10 */
+google_ad_slot = "3941232635";
+google_ad_width = 468;
+google_ad_height = 60;
+//-->
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script>
+</noindex>
+<?php require ("tegi_show.php"); ?>
+</div>
+
+     </div><!-- end storywrap -->
+
+</div><!-- end post -->
+
+<!-- begin footer -->
+</div><!-- end content -->
+<?php require('sidebar.php'); ?>
+<?php require('footer.php'); ?>
